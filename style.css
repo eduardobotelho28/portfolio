@@ -7,9 +7,9 @@
 }
 
 :root {
-    --color-black  : black  ;
-    --color-white  : #fff   ;
-    --color-purple : #642632;
+    --color-black  : #272727  ;
+    --color-white  : #fff     ;
+    --color-purple : #8b3546  ;
 }
 
 html {
@@ -39,6 +39,10 @@ body {
     align-items: center     ;
 
     background-color: var(--color-black);
+}
+
+.person-name {
+    margin-top: 11rem;
 }
 
 .person-content div h1 {
@@ -75,3 +79,49 @@ body {
     }
 }
 
+.stacks-content {
+    display: flex          ;
+    flex-direction: column ; 
+    margin-top: 6rem       ;
+}
+
+.stacks-content h3 {
+    color: var(--color-white);
+    font-size: 1.80rem;
+    margin-left: 20px;
+
+}
+
+.stacks ul {
+    display: flex;
+    align-items: center;
+}
+
+.stacks {
+    display: flex          ;
+    flex-direction: column ;
+    justify-content: center;
+}
+
+.stacks ul li {
+    display: flex          ;
+    align-items: center    ;
+    
+    position: relative;
+
+    margin: 10px ;
+    padding: 10px;
+
+    list-style: none;
+}
+
+.stacks img {
+    width: 30px  ;
+    height: auto ;
+    transition: transform .2s ease;
+}
+
+.stacks img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
