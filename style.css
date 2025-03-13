@@ -465,3 +465,71 @@ body {
 .cta-project a:hover {
     opacity: .7;
 }
+
+#contacts {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 100%;
+    align-items: center;
+    background-color: var(--color-black);
+    color: white;
+}
+
+.contact-icon-content h2 {
+    margin: 3rem 3rem 3rem 0rem;
+    padding: 1rem 1rem 1rem 0rem;
+    font-size: 3rem;
+    color: white;
+}
+
+.contact-icons-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon-content {
+    display: flex;
+    align-items: center;
+    margin: 0rem 3rem;
+    padding: 1rem;
+}
+
+.contact-icon {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 2rem;
+    background-color: var(--color-white);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.contact-icon i {
+    font-size: 2rem;
+    color: var(--color-purple);
+}
+
+.contact-info span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.contact-info p {
+    margin: .25rem 0rem;
+}
+
+.contact-info a {
+    margin: .25rem 0rem;
+    text-decoration: none;
+    color: var(--color-white);
+    display: block;
+}
+
+.contact-info a:hover {
+    color: var(--color-purple);
+    transition: color .3s ease;
+}
