@@ -22,6 +22,54 @@ body {
     background-color: #272727;
 }
 
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 15px 30px;
+    position: fixed;
+    z-index: 2;
+    background: transparent;
+
+    transition: background .7s ease;
+}
+
+.header-title {
+    text-decoration: none;
+}
+
+.header-title h1{
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.header-title h1:hover{
+    opacity: .8;
+    transition: opacity .3s ease;
+}
+
+.navBar {
+    max-width: 350px;
+    width: 100%;
+}
+
+.navBar ul {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navBar ul li a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
 #person {
     height: 100vh;
     width: 100%  ;
