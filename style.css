@@ -336,7 +336,7 @@ body {
     width: fit-content;
     padding: 2px 4px;
     border-radius: 4px;
-    color:  var(--color-black);
+    /* color:  var(--color-black); */
     background-color: var(--color-purple);
 }
 
