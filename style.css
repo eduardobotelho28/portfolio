@@ -94,15 +94,20 @@ body {
 
 .person-name {
     margin-top: 11rem;
+    padding: 0px 20px;
 }
 
 .person-content div h1 {
     color: transparent     ;
     padding: 0px 4px       ;
-    font-size: 4.5rem      ;
-    line-height: 6rem      ;
+   
+    font-size: calc(2vw + 1.5rem);
+    line-height: calc(3vw + 1.8rem);
+    
+    width: fit-content;
+    position: relative;
 
-    animation: written_text .5s ease forwards;
+    animation: written_text .5s ease forwards; 
 }
 
 .person-content div h1:nth-child(1) {
@@ -131,9 +136,11 @@ body {
 }
 
 .stacks-content {
+    padding: 0px 20px;
     display: flex          ;
     flex-direction: column ; 
     margin-top: 6rem       ;
+    margin: 5rem 0rem 2rem ;
 }
 
 .stacks-content h3 {
@@ -141,33 +148,29 @@ body {
     font-size: 1.80rem;
     margin-left: 20px;
 
-}
+    font-size: calc(.85vw + .5rem);
 
-.stacks ul {
-    display: flex;
-    align-items: center;
 }
 
 .stacks {
-    display: flex          ;
-    flex-direction: column ;
+    max-width:  30vw;
+    display: flex       ;
+    flex-direction: row ;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.stacks ul li {
+.stacks li {
     display: flex          ;
     align-items: center    ;
-    
     position: relative;
-
     margin: 10px ;
     padding: 10px;
-
     list-style: none;
 }
 
 .stacks img {
-    width: 30px  ;
+    width: calc(2.5vw + 0.5rem);
     height: auto ;
     transition: transform .2s ease;
 }
@@ -191,7 +194,7 @@ body {
 
 .person-background {
     height: 100vh         ;
-    width: 50%            ;
+    width: 50vw            ;
 
     display: flex          ;
     flex-direction: column ;
@@ -223,13 +226,10 @@ body {
 }
 
 .links a img {
-    width: 30px;
-    height: 30px;
-
-    margin: 10px;
-
+    width: calc(2vw + 0.8rem);
+    height: calc(2vw + 0.8rem);
+    margin: calc(0.8vw + 0.8rem);
     filter: brightness(0.7);
-
     transition: all 0.3s ease;
 }
 
@@ -244,7 +244,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    padding: 14px;
+    padding:calc(1vw + 0.2rem);
     margin: 20px 15px;
 
     border-radius: 50%;
@@ -256,6 +256,7 @@ body {
 }
 
 .wrapper-profile-photo img {
+    max-width: 320px;
     width: 200px;
     height: 200px;
     border-radius: 50%; 
@@ -263,9 +264,9 @@ body {
 
 #about {
 
-    scroll-margin-top: -15rem;
+    scroll-margin-top: 1rem;
     scroll-behavior: smooth;
-    height: 100%;
+    height: auto;
     width: 100%;
     background-color: var(--color-black);
 
@@ -275,7 +276,7 @@ body {
 
 .background-about {
     width: 50%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -317,11 +318,14 @@ body {
 
     width: 50%;
     padding: 3rem;
+    margin: 6rem 0rem;
+
 }
 
 .section-subtitle h2 p {
     display: inline-block;
     font-size: 3rem;
+    font-size: calc(1.4vw + 1.2rem);
 }
 
 .section-subtitle h2 p:nth-child(2) span {
@@ -333,7 +337,7 @@ body {
 
 .box-about h3 {
     margin: 3rem;
-    font-size: 2rem;
+    font-size: calc(.8vw + .8rem);
 }
 
 .box-about h3 p {
@@ -347,14 +351,13 @@ body {
 
 .box-about h4 {
     margin: 1rem 3rem;
-    font-size: 1.5rem;
+    font-size: calc(.8vw + .5rem);
 }
 
 .box-about h4 p {
     display: inline;
     padding: 2px 4px;
     color: var(--color-purple);
-    font-weight: 1.75rem;
 }
 
 .button-cta {
@@ -365,14 +368,14 @@ body {
 
 .button-cta a {
     display: inline-block;
-    width: 100%;
-    max-width: 172px;
+    /* width: 100%; */
+    /* max-width: 172px; */
 
-    padding: 10px;
+    padding: calc(0.2vw + 0.8rem) calc(2vw + 0.8rem);
     margin-bottom: 3rem;
 
     font-family: "Inter", sans-serif;
-    font-size: 1.3rem;
+    font-size: calc(.7vw + .55rem);
     font-weight: 700;
     letter-spacing: .15rem;
     border-radius: 10px;
@@ -563,6 +566,8 @@ body {
 .contact-icons-wrapper {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
 }
 
 .contact-icon-content {
@@ -630,4 +635,111 @@ body {
     flex-direction: column;
 
     color: var(--color-white);
+}
+
+@media (max-width:1440px) and (orientation:landscape) {
+    /* .wrapper-profile-photo img {
+        width: 45vw;
+    } */
+}
+
+@media (min-width:1440px) {
+    .wrapper-profile-photo img {
+        width: 200px;
+        max-width: initial;
+    }
+}
+
+@media (max-width:376px) {
+    .stacks-content {
+        padding: 0px 20px;
+    }
+
+    .stacks-content h3 {
+        margin-left: 10px;
+    }
+
+    .stacks {
+        margin-top: 10;
+    }
+
+    .stacks li {
+        margin: 0px;
+    }
+
+    .person-name {
+        padding: 0px 10px;
+    }
+
+    .stacks li img {
+        width: calc(3.5vw + .5rem);
+    }
+
+    .wrapper-profile-photo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .box-about {
+        padding: 1rem;
+    }
+
+    .section-subtitle p {
+        font-size: 2rem;
+    }
+
+    .box-about h3 {
+        margin: 2rem 1rem;
+    }
+
+    .box-about h4 {
+        margin: 1rem;
+    }
+
+}
+
+@media (max-width:768px) {
+    .links a img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (min-width:377px) and (max-width:768px) {
+
+    .person-name {
+        padding: 0px 10px;
+    }
+
+    .stacks-content {
+        padding: 0px 15px;
+    }
+
+    .stacks li img {
+        width: calc(3.2vw + .5rem);
+    }
+
+    .stacks-content h3 {
+        margin-left: 10px;
+    }
+
+    .stacks {
+        margin-top: 10px;
+        margin-bottom: 60px;
+    }
+
+    .stacks li {
+        margin: 0px;
+    }
+
+    .wrapper-profile-photo img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width:1000px) and (orientation:landscape) {
+    .stacks-content h3 {
+        font-size: 1vw;
+    }
 }
