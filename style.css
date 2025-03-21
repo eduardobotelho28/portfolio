@@ -58,19 +58,116 @@ body {
     width: 100%;
 }
 
-.navBar ul {
+.navbar-links {
     list-style: none;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    width: 100%;
 }
 
-.navBar ul li a {
+.navbar-links li a {
     text-decoration: none;
     color: var(--color-white);
     font-size: 1.4rem;
     font-weight: 700;
+    transition: all .2s ease-in-out;
+}
+
+.menu-hamburguer {
+    display: none;
+}
+
+@media (max-width:560px) {
+
+    .navBar {
+        display: flex;
+        justify-content: end;
+    }
+
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+
+        width: 50%;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+
+        background-color: #333;
+
+        transition: all .6s ease-out;
+
+        clip-path: circle(100px at 90% -20%);
+        pointer-events: none;
+    }
+
+    .menu-hamburguer {
+        display: block;
+        padding: 0;
+        margin-bottom: .4rem;
+        background-color: transparent;
+        border:none;
+    
+        border-top: 3px solid white;
+        transition: all .3 ease-in-out;
+        z-index: 1;
+    }
+    
+    .menu-hamburguer:hover {
+        opacity: .8;
+        cursor: pointer;
+    }
+
+    .menu-hamburguer::before,
+    .menu-hamburguer::after {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin-top: .6rem;
+        background: var(--color-white);
+    }
+
+    .navBar.active .menu-hamburguer {
+        border-top-color:transparent
+    }
+    .navBar.active .menu-hamburguer::before {
+        transition: all .2s ease-in-out;
+        transform: rotate(-45deg) translate(-2px,-1px);
+    }
+    .navBar.active .menu-hamburguer::after {
+        transition: all .2s ease-in-out;
+        transform: rotate(45deg) translate(-7px,-5px);
+    }
+
+    .navBar.active .navbar-links {
+        clip-path: circle(1400px at 90% -18%);
+        pointer-events: all;
+    }
+}
+
+@media (min-width:1840px) {
+
+    .header-title h1 {
+        font-size: calc(1vw + .8rem);
+    }
+
+    .navBar {
+        max-width: 25vw;
+    }
+
+    .navbar-links li {
+        margin: 1rem;
+    }
+
+    .navbar-links li a {
+        font-size: calc(1vw + .3rem);
+    }
+
 }
 
 #person {
@@ -101,7 +198,7 @@ body {
     color: transparent     ;
     padding: 0px 4px       ;
    
-    font-size: calc(2vw + 1.5rem);
+    font-size: calc(1vw + 1.5rem);
     line-height: calc(3vw + 1.8rem);
     
     width: fit-content;
@@ -396,8 +493,8 @@ body {
 
 #projects {
 
-    scroll-margin-top: 2rem;
-    height: 100vh;
+    /* scroll-margin-top: 2rem; */
+    height: auto;
     width: 100%  ;
     background-color: var(--color-black);
 
@@ -406,7 +503,7 @@ body {
 }
 
 .projects-title h2 {
-    margin: 3rem;
+    margin: 60px;
     padding: 1rem;
 
     font-size: 3rem;
@@ -424,7 +521,7 @@ body {
 }
 
 .swiper {
-    height: 100%;
+    height: 500px;
     width: 100%;
     max-width: 1020;
     display: flex;
@@ -433,6 +530,7 @@ body {
 
     margin-top: 2rem;
     height: 500px;
+    padding: 0px 20px;
 }
 
 .card-project {
@@ -549,11 +647,13 @@ body {
 #contacts {
     display: flex;
     flex-direction: column;
-    height: 40vh;
+    height: auto;
     width: 100%;
     align-items: center;
     background-color: var(--color-black);
     color: white;
+
+    margin: 3vw 0vw 5vw;
 }
 
 .contact-icon-content h2 {
@@ -619,10 +719,12 @@ body {
 #footer {
     display: flex;
     width: 100%;
-    height: 5vh;
+    height: auto;
 
     justify-content: center;
     align-items: center;
+
+    padding: calc(1vw + 1rem) 0vw;
 
     margin-top: auto;
     background-color: #191919;
@@ -637,22 +739,23 @@ body {
     color: var(--color-white);
 }
 
-@media (max-width:1440px) and (orientation:landscape) {
-    /* .wrapper-profile-photo img {
-        width: 45vw;
-    } */
-}
+@media (max-width: 375px) {
+    .swiper-slide span {
+        font-size: 1.5rem;
+    }
 
-@media (min-width:1440px) {
-    .wrapper-profile-photo img {
-        width: 200px;
-        max-width: initial;
+    .swiper-slide p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width:376px) {
     .stacks-content {
         padding: 0px 20px;
+    }
+
+    .person-name h1 {
+        font-size: 1rem;
     }
 
     .stacks-content h3 {
@@ -698,17 +801,14 @@ body {
 
 }
 
-@media (max-width:768px) {
-    .links a img {
-        width: 20px;
-        height: 20px;
-    }
-}
-
 @media (min-width:377px) and (max-width:768px) {
 
     .person-name {
         padding: 0px 10px;
+    }
+
+    .person-name h1 {
+        font-size: 1rem; /* Adicione essa linha */
     }
 
     .stacks-content {
@@ -736,6 +836,62 @@ body {
         width: 100px;
         height: 100px;
     }
+
+    .box-about {
+        padding: 1.3rem;
+    }
+
+    .box-about h3 {
+        margin: 1.5rem 1rem;
+    }
+
+    .box-about h4 {
+        margin: 1.5rem;
+    }
+
+    .section-subtitle p{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    .links a img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1440px) {
+
+    .box-about {
+        padding: 1.8rem;
+    }
+
+    .box-about h3 {
+        margin: 2rem 1rem;
+    }
+
+    .box-about h4 {
+        margin: 1.5rem;
+    }
+
+    .section-subtitle p {
+        font-size: 2.5rem;
+    }
+
+}
+
+@media (max-width:1440px) and (orientation:landscape) {
+    /* .wrapper-profile-photo img {
+        width: 45vw;
+    } */
+}
+
+@media (min-width:1440px) {
+    .wrapper-profile-photo img {
+        width: 200px;
+        max-width: initial;
+    }
 }
 
 @media (max-width:1000px) and (orientation:landscape) {
@@ -743,3 +899,94 @@ body {
         font-size: 1vw;
     }
 }
+
+@media (min-width: 1840px) {
+
+    .contact-icon-content h2 {
+        font-size: calc(1.4vw + 1.8rem);
+    }
+
+    .contact-icon {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .contact-icon i {
+        font-size: 1vw;
+    }
+
+    .contact-info span {
+        font-size: 1.1vw;
+    }
+
+    .contact-info p {
+        font-size: .7vw;
+    }
+
+    .contact-info a {
+        font-size: .7vw;
+    }
+
+    .container-footer h2{
+        font-size: calc(1vw + .2rem);
+    }
+
+    .container-footer h3 {
+        font-size: .8vw;
+    }
+
+}
+
+@media (max-width:1000px) {
+    .swiper {
+        max-width: 700px;
+    }
+}
+
+@media (max-width:700px) {
+    .swiper {
+        max-width: 350px;
+    }
+
+    .container-projects {
+        padding: 10px;
+    }
+}
+
+@media (min-width:1840px) {
+    .projects-title h2 {
+        font-size: calc(1.4vw + 1.8rem);
+    }
+
+    .swiper {
+        max-width: calc(50vw + 15rem + 30%);
+        height: calc(20vw + 22.5rem);
+    }
+
+    .image-project {
+        width: calc(18vw + 11rem);
+        height: calc(10vw + 10rem);
+        max-width: calc(18vw + 11rem);
+        max-height: calc(10vw + 10rem);
+    }
+        
+    .card-project span {
+        font-size: calc(1.1vw + .25rem);
+        margin: 0.5vw auto 0.5vw;
+    }
+
+    .card-project p {
+        font-size: calc(1vw + .2rem);
+    }
+
+    .cta-project {
+        width: auto;
+    }
+
+    .card-project a {
+        padding: 1rem 2rem;
+        font-size: 0.8vw;
+        margin-right: 1vw;
+    }
+}
+
