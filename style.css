@@ -228,7 +228,7 @@ body {
 
 @keyframes written_text_name {
     100% {
-        color: var(--color-purple);
+        color: #8b3546
     }
 }
 
@@ -692,7 +692,7 @@ body {
 
 .contact-icon i {
     font-size: 2rem;
-    color: var(--color-purple);
+    color: #8b3546
 }
 
 .contact-info span {
